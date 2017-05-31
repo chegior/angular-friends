@@ -168,7 +168,9 @@ angular.module("friends").controller('mainCtrl',function($scope){
     location: null,
     status: null,
     friend_count: 855
-  }]
+  }];
+  
+
 
 
 
