@@ -12,7 +12,10 @@
   <div class="friends">
     <form class="form-inline searchForm" role="form">
       <div class="form-group">
-        <input class="form-control" placeholder="Search Anything About Your Friends">
+        <!--<input ng-model='nameFilter' class="form-control" placeholder="Search Anything About Your Friends">-->
+
+        <input ng-model='filterUser.name'class="form-control" placeholder="Search Name">
+        <input ng-model='filterUser.location.state' class="form-control" placeholder="Search State">
 
         <select class="input-medium">
           <option>Name</option>
@@ -30,11 +33,11 @@
     </form>
 
     <ul>
-      <li class='friend' ng-repeat="friend in arrayFriends">
+      <li class='friend' ng-repeat="friend in arrayFriends | filter : filterUser">
         <img class="profile-pic" src={{friend.pic_square}}>
         <h3>{{friend.name}}</h3>
         <div class="location">
-          Location: {{friend.location.city}}  {{friend.location.state}}
+          Location: {{friend.location.city}},{{friend.location.state}},{{friend.location.country}}
         </div>
         <div class="status">
           Status: {{friend.status}}
