@@ -1,5 +1,7 @@
 angular.module("friends").controller('mainCtrl',function($scope){
   $scope.variable ="IT IS WORKING"
+  $scope.sortProp;
+  $scope.sortDirection;
   $scope.arrayFriends = [{
     name: 'Preston McNeil',
     pic_square: 'http://free-profile-pics.com/profile-pictures/01232014/images/albert-einstein-profile-picture-133x133.PNG',
@@ -169,7 +171,19 @@ angular.module("friends").controller('mainCtrl',function($scope){
     status: null,
     friend_count: 855
   }];
-  
+
+  $scope.options =[
+    {name:'Name',value:'name'},
+    {name:'#Friends',value:'friend_count'},
+    {name:'City',value:'location.city'},
+    {name:'State',value:'location.state'},
+    {name:'Country',value:'location.country'},
+  ];
+
+
+
+    // 'friend_count','location.city','location.state','location.country'];
+
 
 
 

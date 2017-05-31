@@ -17,12 +17,12 @@
         <input ng-model='filterUser.name'class="form-control" placeholder="Search Name">
         <input ng-model='filterUser.location.state' class="form-control" placeholder="Search State">
 
-        <select ng-model='sortProp' class="input-medium">
-          <option value='name'>Name</option>
+        <select ng-model='sortProp' ng-options='option.name for option in options' class="input-medium">
+          <!-- <option value='name'>Name</option>
           <option value='friend_count'>#Friends</option>
           <option value='location.city'>City</option>
           <option value='location.state'>State</option>
-          <option value='location.country'>Country</option>
+          <option value='location.country'>Country</option> -->
         </select>
 
         <select ng-model='sortDirection' class="input-medium">
@@ -33,7 +33,7 @@
     </form>
 
     <ul>
-      <li class='friend' ng-repeat="friend in arrayFriends | filter : filterUser |orderBy:sortDirection + sortProp ">
+      <li class='friend' ng-repeat="friend in arrayFriends | filter : filterUser |orderBy:sortDirection + sortProp.value ">
         <img class="profile-pic" src={{friend.pic_square}}>
         <h3>{{friend.name}}</h3>
         <div class="location">
